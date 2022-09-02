@@ -6,4 +6,9 @@ nnoremap("<C-p>", "<cmd>lua require('telescope.builtin').find_files()<CR>")
 nnoremap("<C-f>", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
 nnoremap("<C-b>", "<cmd>lua require('telescope.builtin').buffers()<CR>")
 
-nnoremap("<C-i>", "gg=G``")
+nnoremap("+", "<C-w>l")
+nnoremap("ü", "<C-w>h")
+nnoremap("ä", "<C-w>j")
+nnoremap("ß", "<C-w>k")
+
+nnoremap("ö", "gg=G``")
