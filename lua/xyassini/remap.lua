@@ -4,5 +4,6 @@ nnoremap("<leader>e", "<cmd>NvimTreeToggle<CR>")
 nnoremap("<leader>d", "yyp")
 nnoremap("<C-p>", "<cmd>lua require('telescope.builtin').find_files()<CR>")
 nnoremap("<C-f>", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
+nnoremap("<C-b>", "<cmd>lua require('telescope.builtin').buffers()<CR>")
 
 nnoremap("<C-i>", "gg=G``")

@@ -19,6 +19,17 @@ return require("packer").startup(function(use)
 
   -- Autocomplete
   use("github/copilot.vim")
+  use("williamboman/mason.nvim")
+  use("glepnir/lspsaga.nvim")
+  use("williamboman/mason-lspconfig.nvim")
+  use("neovim/nvim-lspconfig")
+  use("folke/trouble.nvim")
+
+  use("hrsh7th/cmp-nvim-lsp")
+  use("hrsh7th/cmp-buffer")
+  use("hrsh7th/cmp-path")
+  use("hrsh7th/cmp-cmdline")
+  use("hrsh7th/nvim-cmp")
 
   -----------------------------------------------
   -- Syntax Highlighting/Programming Languages --
@@ -35,4 +46,5 @@ return require("packer").startup(function(use)
   use("elzr/vim-json")
   use("moll/vim-node")
   use("leafgarland/typescript-vim")
+  use("evanleck/vim-svelte")
 end)
