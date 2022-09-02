@@ -10,6 +10,7 @@ return require("packer").startup(function(use)
   use("nvim-lua/plenary.nvim")
   use("nvim-telescope/telescope.nvim")
   use("feline-nvim/feline.nvim")
+  use("Pocco81/auto-save.nvim")
   use {
     "kyazdani42/nvim-tree.lua",
     requires = {
