@@ -1,6 +1,6 @@
 local nnoremap = require("xyassini.keymap").nnoremap
 
-nnoremap("<leader>x", "<cmd>Ex<CR>")
+nnoremap("<leader>e", "<cmd>NvimTreeToggle<CR>")
 nnoremap("<leader>d", "yyp")
 nnoremap("<C-p>", "<cmd>lua require('telescope.builtin').find_files()<CR>")
 nnoremap("<C-f>", "<cmd>lua require('telescope.builtin').live_grep()<CR>")

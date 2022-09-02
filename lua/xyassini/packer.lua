@@ -1,22 +1,29 @@
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  
+return require("packer").startup(function(use)
+  use "wbthomason/packer.nvim"
+
   -- Theme
-  use 'folke/tokyonight.nvim'
-  
+  use "folke/tokyonight.nvim"
+
   -- UI/UX
   use("nvim-lua/plenary.nvim")
   use("nvim-telescope/telescope.nvim")
+  use("feline-nvim/feline.nvim")
+  use {
+    "kyazdani42/nvim-tree.lua",
+    requires = {
+      "kyazdani42/nvim-web-devicons",
+    },
+  }
 
   -- Autocomplete
   use("github/copilot.vim")
- 
+
   -----------------------------------------------
   -- Syntax Highlighting/Programming Languages --
   -----------------------------------------------
- 
+
   -- Ruby on Rails
   use("vim-ruby/vim-ruby")
   use("tpope/vim-rails")
