@@ -11,4 +11,6 @@ nnoremap("ü", "<C-w>h")
 nnoremap("ä", "<C-w>j")
 nnoremap("ß", "<C-w>k")
 
+nnoremap("<leader>g", "<cmd>:LazyGit<CR>")
+
 nnoremap("ö", "gg=G``")

@@ -9,13 +9,16 @@ return require("packer").startup(function(use)
   -- UI/UX
   use("nvim-lua/plenary.nvim")
   use("nvim-telescope/telescope.nvim")
-  use("feline-nvim/feline.nvim")
   use("Pocco81/auto-save.nvim")
   use {
     "kyazdani42/nvim-tree.lua",
     requires = {
       "kyazdani42/nvim-web-devicons",
     },
+  }
+  use {
+    "nvim-lualine/lualine.nvim",
+    requires = { "nvim-web-devicons" },
   }
 
   -- Autocomplete
@@ -31,6 +34,9 @@ return require("packer").startup(function(use)
   use("hrsh7th/cmp-path")
   use("hrsh7th/cmp-cmdline")
   use("hrsh7th/nvim-cmp")
+
+  -- Git
+  use("kdheepak/lazygit.nvim")
 
   -----------------------------------------------
   -- Syntax Highlighting/Programming Languages --
