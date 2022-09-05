@@ -10,6 +10,7 @@ return require("packer").startup(function(use)
   use("nvim-lua/plenary.nvim")
   use("nvim-telescope/telescope.nvim")
   use("Pocco81/auto-save.nvim")
+  use("sunjon/shade.nvim")
   use {
     "kyazdani42/nvim-tree.lua",
     requires = {
@@ -24,16 +25,15 @@ return require("packer").startup(function(use)
   -- Autocomplete
   use("github/copilot.vim")
   use("williamboman/mason.nvim")
-  use("glepnir/lspsaga.nvim")
   use("williamboman/mason-lspconfig.nvim")
   use("neovim/nvim-lspconfig")
-  use("folke/trouble.nvim")
-
   use("hrsh7th/cmp-nvim-lsp")
   use("hrsh7th/cmp-buffer")
   use("hrsh7th/cmp-path")
-  use("hrsh7th/cmp-cmdline")
   use("hrsh7th/nvim-cmp")
+  
+  use("folke/trouble.nvim")
+  use("aca/emmet-ls")
 
   -- Git
   use("kdheepak/lazygit.nvim")

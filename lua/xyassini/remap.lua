@@ -11,6 +11,8 @@ nnoremap("ü", "<C-w>h")
 nnoremap("ä", "<C-w>j")
 nnoremap("ß", "<C-w>k")
 
-nnoremap("<leader>g", "<cmd>:LazyGit<CR>")
+nnoremap("<leader>g", "<cmd>LazyGit<CR>")
+
+nnoremap("<leader>sv", "<cmd>luafile $MYVIMRC<CR>")
 
 nnoremap("ö", "gg=G``")
