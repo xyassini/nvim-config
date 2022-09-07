@@ -15,4 +15,5 @@ nnoremap("<leader>g", "<cmd>LazyGit<CR>")
 
 nnoremap("<leader>sv", "<cmd>luafile $MYVIMRC<CR>")
 
-nnoremap("ö", "gg=G``")
+-- nnoremap("ö", "gg=G``")
+nnoremap("ö", "gg=G<C-o>")
