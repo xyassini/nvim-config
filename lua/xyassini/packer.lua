@@ -32,9 +32,13 @@ return require("packer").startup(function(use)
   use("hrsh7th/cmp-path")
   use("hrsh7th/nvim-cmp")
   use("hrsh7th/cmp-copilot")
-  
   use("folke/trouble.nvim")
-  use("aca/emmet-ls")
+
+  -- Syntax
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  })
 
   -- Git
   use("kdheepak/lazygit.nvim")
