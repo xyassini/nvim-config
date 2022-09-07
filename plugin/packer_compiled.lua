@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
   ["auto-save.nvim"] = {
     loaded = true,
     path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/auto-save.nvim",
@@ -104,10 +109,10 @@ _G.packer_plugins = {
     path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
-  ["emmet-ls"] = {
+  ["friendly-snippets"] = {
     loaded = true,
-    path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/emmet-ls",
-    url = "https://github.com/aca/emmet-ls"
+    path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["lazygit.nvim"] = {
     loaded = true,
@@ -143,6 +148,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/kyazdani42/nvim-tree.lua"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
