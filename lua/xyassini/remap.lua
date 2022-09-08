@@ -20,10 +20,10 @@ nnoremap("ä", "<C-w>j")
 nnoremap("ß", "<C-w>k")
 
 -- Split panes in light speed too, by prepending Ctrl to above commands
-nnoremap("<C-+>", "<cmd>:vs<CR><C-w>l")
-nnoremap("<C-ä>", "<cmd>:sp<CR><C-w>j")
-nnoremap("<C-ü>", "<cmd>:vs<CR>")
-nnoremap("<C-ß>", "<cmd>:sp<CR>")
+nnoremap("<C-+>", "<cmd>:vs<CR><C-w>l<cmd>lua require('telescope.builtin').find_files()<CR>")
+nnoremap("<C-ä>", "<cmd>:sp<CR><C-w>j<cmd>lua require('telescope.builtin').find_files()<CR>")
+nnoremap("<C-ü>", "<cmd>:vs<CR><cmd>lua require('telescope.builtin').find_files()<CR>")
+nnoremap("<C-ß>", "<cmd>:sp<CR><cmd>lua require('telescope.builtin').find_files()<CR>")
 
 -- Open LazyGit
 nnoremap("<leader>g", "<cmd>LazyGit<CR>")
