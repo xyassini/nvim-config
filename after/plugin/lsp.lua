@@ -41,8 +41,8 @@ vim.api.nvim_create_autocmd('User', {
     bufmap('n', '<C-0>', '<cmd>lua vim.lsp.buf.rename()<cr>')
 
     -- Selects a code action available at the current cursor position
-    bufmap('n', '<C-l>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
-    bufmap('x', '<C-l>', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
+    bufmap('n', '<C-Enter>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
+    bufmap('x', '<C-Enter>', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
 
     -- Show diagnostics in a floating window
     bufmap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
