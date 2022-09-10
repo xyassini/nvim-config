@@ -24,6 +24,20 @@ cmp.setup({
     documentation = cmp.config.window.bordered()
   },
 
+  formatting = {
+    fields = {'menu', 'abbr', 'kind'},
+    format = function(entry, vim_item)
+      vim_item.menu = ({
+        nvim_lsp = "[LSP]",
+        luasnip = "[LuaSnip]",
+        buffer = "[Buffer]",
+        path = "[Path]",
+        copilot = "[Copilot]",
+      })[entry.source.name]
+      return vim_item
+    end
+  },
+
   mapping = {
     ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
     ['<Down>'] = cmp.mapping.select_next_item(select_opts),
