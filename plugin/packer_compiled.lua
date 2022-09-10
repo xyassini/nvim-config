@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["cmp-nvim-lsp-document-symbol"] = {
+    loaded = true,
+    path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp-document-symbol",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp-document-symbol"
+  },
   ["cmp-path"] = {
     loaded = true,
     path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/cmp-path",
@@ -113,6 +118,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
+  },
+  ["emmet-ls"] = {
+    loaded = true,
+    path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/emmet-ls",
+    url = "https://github.com/aca/emmet-ls"
   },
   ["friendly-snippets"] = {
     loaded = true,

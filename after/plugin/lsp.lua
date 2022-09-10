@@ -78,6 +78,19 @@ lspconfig.util.default_config = vim.tbl_deep_extend('force', lspconfig.util.defa
 -- LSP servers
 --------------------------------------------------------------------------------
 
+-- Emmet
+lspconfig.emmet_ls.setup({
+  filetypes = {
+    'html',
+    'javascriptreact',
+    'typescriptreact',
+    'svelte',
+    'vue',
+    'eruby',
+    'astro'
+  }
+})
+
 -- Typescript
 lspconfig.tsserver.setup({})
 
