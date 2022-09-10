@@ -93,7 +93,14 @@ lspconfig.prismals.setup({
 lspconfig.jsonls.setup({})
 
 -- HTML
-lspconfig.html.setup({})
+lspconfig.html.setup({
+  filetypes = {
+    'html',
+    'eruby',
+    'astro',
+    'svelte'
+  }
+})
 
 -- Docker
 lspconfig.dockerls.setup({})
@@ -106,6 +113,20 @@ lspconfig.angularls.setup({})
 
 -- Talwind CSS
 lspconfig.tailwindcss.setup({
+  filetypes = {
+    'html',
+    'css',
+    'scss',
+    'javascript',
+    'javascriptreact',
+    'typescript',
+    'typescriptreact',
+    'svelte',
+    'vue',
+    'markdown',
+    'eruby',
+    'astro'
+  },
   init_options = {
     eruby = "erb"
   },
