@@ -1,4 +1,5 @@
 local nnoremap = require("xyassini.keymap").nnoremap
+local nmap = require("xyassini.keymap").nmap
 
 -- Toggle file tree
 nnoremap("<leader>e", "<cmd>NvimTreeToggle<CR>")
@@ -12,6 +13,17 @@ nnoremap("<C-p>", "<cmd>lua require('telescope.builtin').find_files()<CR>")
 nnoremap("<C-f>", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
 -- Show all recent buffers
 nnoremap("<C-b>", "<cmd>lua require('telescope.builtin').buffers()<CR>")
+
+-- vim-test mappings
+nmap('<leader>t', '<cmd>TestNearest<CR>')
+nmap('<leader>T', '<cmd>TestFile<CR>')
+nmap('<leader>a', '<cmd>TestSuite<CR>')
+
+-- Other.nvim mappings
+nnoremap("<leader>o", "<cmd>Other<CR>")
+nnoremap("<leader><Down>", "<cmd>OtherSplit<CR>")
+nnoremap("<leader><Right>", "<cmd>OtherVSplit<CR>")
+nnoremap("<leader>c", "<cmd>OtherClear<CR>")
 
 -- Move through panes in light speed (at least on a German keyboard)
 nnoremap("+", "<C-w>l")
