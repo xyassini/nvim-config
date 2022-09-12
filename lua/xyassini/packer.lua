@@ -80,6 +80,7 @@ return require("packer").startup(function(use)
   use("Pocco81/auto-save.nvim") -- Autosaves files on insert mode leave because I forget that too often
   use("ethanholz/nvim-lastplace") -- Automatically jumps to the last place I was in a file
   use("rgroli/other.nvim") -- Quickly open alternate files 
+  use("mhartington/formatter.nvim") -- Code formatting
 
 
 
@@ -98,5 +99,8 @@ return require("packer").startup(function(use)
   use("elzr/vim-json")
   use("moll/vim-node")
   use("leafgarland/typescript-vim")
+
+  -- Svelte
+  use("othree/html5.vim")
   use("evanleck/vim-svelte")
 end)

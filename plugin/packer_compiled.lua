@@ -124,10 +124,20 @@ _G.packer_plugins = {
     path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/emmet-ls",
     url = "https://github.com/aca/emmet-ls"
   },
+  ["formatter.nvim"] = {
+    loaded = true,
+    path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/formatter.nvim",
+    url = "https://github.com/mhartington/formatter.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
+  },
+  ["html5.vim"] = {
+    loaded = true,
+    path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/html5.vim",
+    url = "https://github.com/othree/html5.vim"
   },
   ["lazygit.nvim"] = {
     loaded = true,
