@@ -12,10 +12,10 @@ cmp.setup({
 
   sources = cmp.config.sources({
     { name = "copilot" },
-    { name = "nvim_lsp" },
-    { name = "path" },
-    { name = "luasnip" },
-    { name = "nvim_lsp_document_symbol" }
+    { name = "nvim_lsp", keyword_length = 3 },
+    { name = "path", keyword_length = 2 },
+    { name = "luasnip", keyword_length = 2 },
+    { name = "nvim_lsp_document_symbol", keyword_length = 3 }
   },{
     { name = "buffer" }
   }),
@@ -28,11 +28,11 @@ cmp.setup({
     fields = {'menu', 'abbr', 'kind'},
     format = function(entry, vim_item)
       vim_item.menu = ({
-        nvim_lsp = "[LSP]",
-        luasnip = "[LuaSnip]",
-        buffer = "[Buffer]",
-        path = "[Path]",
-        copilot = "[Copilot]",
+        nvim_lsp = "",
+        luasnip = "",
+        buffer = "",
+        path = "",
+        copilot = "ﮧ",
       })[entry.source.name]
       return vim_item
     end
@@ -41,50 +41,23 @@ cmp.setup({
   mapping = {
     ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
     ['<Down>'] = cmp.mapping.select_next_item(select_opts),
+    ['<Left>'] = cmp.mapping.scroll_docs(-4),
+    ['<Right>'] = cmp.mapping.scroll_docs(4),
 
-    ['<C-p>'] = cmp.mapping.select_prev_item(select_opts),
-    ['<C-n>'] = cmp.mapping.select_next_item(select_opts),
-
-    ['<C-k>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-j>'] = cmp.mapping.scroll_docs(4),
-
-    ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({select = true}),
-
-    ['<C-g>'] = cmp.mapping(function(fallback)
-      if luasnip.jumpable(1) then
-        luasnip.jump(1)
-      else
-        fallback()
-      end
-    end, {'i', 's'}),
-
-    ['<C-b>'] = cmp.mapping(function(fallback)
-      if luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, {'i', 's'}),
-
+    ['<ESC>'] = cmp.mapping.close(),
     ['<Tab>'] = cmp.mapping(function(fallback)
-      local col = vim.fn.col('.') - 1
-
+      -- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
       if cmp.visible() then
-        cmp.select_next_item(select_opts)
-      elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-        fallback()
-      else
-        cmp.complete()
-      end
-    end, {'i', 's'}),
-
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item(select_opts)
+        local entry = cmp.get_selected_entry()
+        if not entry then
+          cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+        else
+          cmp.confirm()
+        end
       else
         fallback()
       end
-    end, {'i', 's'}),
+    end, {"i","s","c",}),
   }
 })
+
