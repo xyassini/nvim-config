@@ -13,3 +13,5 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 
 vim.g.mapleader = " "
+
+vim.cmd("hi LineNr guifg=#9999aa")
