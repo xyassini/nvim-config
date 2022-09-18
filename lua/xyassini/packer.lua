@@ -1,7 +1,7 @@
-vim.cmd [[packadd packer.nvim]]
+vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
-  use "wbthomason/packer.nvim"
+  use("wbthomason/packer.nvim")
 
   ----------------------------------------
   -- User Interface
@@ -11,18 +11,17 @@ return require("packer").startup(function(use)
   use("nvim-lua/plenary.nvim") -- Required by telescope
   use("nvim-telescope/telescope.nvim") -- Fuzzy finder
 
-  use {
+  use({
     "nvim-lualine/lualine.nvim",
     requires = { "nvim-web-devicons" },
-  } -- Statusline
+  }) -- Statusline
 
-  use {
+  use({
     "kyazdani42/nvim-tree.lua",
     requires = {
       "kyazdani42/nvim-web-devicons",
     },
-  } -- File explorer
-
+  }) -- File explorer
 
   ----------------------------------------
   -- Language Server Protocol
@@ -31,7 +30,6 @@ return require("packer").startup(function(use)
   use("williamboman/mason-lspconfig.nvim") -- lspconfig wrapper for mason
   use("neovim/nvim-lspconfig") -- LSP configuration
   use("folke/trouble.nvim") -- diagnostics
-
 
   ----------------------------------------
   -- Autocomplete
@@ -43,10 +41,8 @@ return require("packer").startup(function(use)
   use("hrsh7th/cmp-buffer") -- Buffer completion
   use("hrsh7th/cmp-path") -- Path completion
   use("hrsh7th/cmp-copilot") -- Copilot completion
-  use("hrsh7th/cmp-nvim-lsp-document-symbol") -- LSP document symbol completion
-  use({"L3MON4D3/LuaSnip", tag = "v1.*"}) -- Snippets
+  use({ "L3MON4D3/LuaSnip", tag = "v1.*" }) -- Snippets
   use("rafamadriz/friendly-snippets") -- Snippets
-
 
   ----------------------------------------
   -- Syntax
@@ -55,34 +51,33 @@ return require("packer").startup(function(use)
   use("windwp/nvim-ts-autotag") -- Auto-close HTML tags
   use("tpope/vim-surround") -- Quickly change surrounding brackets, quotes, tags, whatever
   use("nvim-treesitter/nvim-treesitter-context") -- Sticks the current method I'm in to the top
+  use("sakshamgupta05/vim-todo-highlight") -- Highlights TODOs
 
   use({
     "nvim-treesitter/nvim-treesitter",
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    run = function()
+      require("nvim-treesitter.install").update({ with_sync = true })
+    end,
   }) -- Syntax highlighting
-
 
   ----------------------------------------
   -- Git
   ----------------------------------------
   use("kdheepak/lazygit.nvim")
 
-
   ----------------------------------------
   -- Testing
   ----------------------------------------
   use("vim-test/vim-test") -- Quick test running
-
 
   ----------------------------------------
   -- Misc
   ----------------------------------------
   use("Pocco81/auto-save.nvim") -- Autosaves files on insert mode leave because I forget that too often
   use("ethanholz/nvim-lastplace") -- Automatically jumps to the last place I was in a file
-  use("rgroli/other.nvim") -- Quickly open alternate files 
-  use("mhartington/formatter.nvim") -- Code formatting
-
-
+  use("rgroli/other.nvim") -- Quickly open alternate files
+  use({ "nullishamy/formatter.nvim", branch = "feat/fallback-lsp" }) -- Code formatting
+  use("ThePrimeagen/vim-be-good") -- Vim practice
 
   ----------------------------------------
   -- Language Specific Stuff

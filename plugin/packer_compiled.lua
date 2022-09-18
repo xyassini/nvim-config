@@ -104,11 +104,6 @@ _G.packer_plugins = {
     path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  ["cmp-nvim-lsp-document-symbol"] = {
-    loaded = true,
-    path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp-document-symbol",
-    url = "https://github.com/hrsh7th/cmp-nvim-lsp-document-symbol"
-  },
   ["cmp-path"] = {
     loaded = true,
     path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/cmp-path",
@@ -127,7 +122,7 @@ _G.packer_plugins = {
   ["formatter.nvim"] = {
     loaded = true,
     path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/formatter.nvim",
-    url = "https://github.com/mhartington/formatter.nvim"
+    url = "https://github.com/nullishamy/formatter.nvim"
   },
   ["friendly-snippets"] = {
     loaded = true,
@@ -239,6 +234,11 @@ _G.packer_plugins = {
     path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/typescript-vim",
     url = "https://github.com/leafgarland/typescript-vim"
   },
+  ["vim-be-good"] = {
+    loaded = true,
+    path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/vim-be-good",
+    url = "https://github.com/ThePrimeagen/vim-be-good"
+  },
   ["vim-bundler"] = {
     loaded = true,
     path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/vim-bundler",
@@ -288,6 +288,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/vim-test",
     url = "https://github.com/vim-test/vim-test"
+  },
+  ["vim-todo-highlight"] = {
+    loaded = true,
+    path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/vim-todo-highlight",
+    url = "https://github.com/sakshamgupta05/vim-todo-highlight"
   }
 }
 
