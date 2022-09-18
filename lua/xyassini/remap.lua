@@ -50,3 +50,6 @@ nnoremap("ö", "<cmd>FormatWrite<CR>")
 
 -- nnoremap("ö", "gg=G``")
 nnoremap("<leader>f", "gg=G<C-o>")
+
+-- Substitute keybind
+nnoremap("<leader>r", ":%s//g<left><left>")
