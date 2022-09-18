@@ -1,4 +1,5 @@
 local nnoremap = require("xyassini.keymap").nnoremap
+local xnoremap = require("xyassini.keymap").xnoremap
 local nmap = require("xyassini.keymap").nmap
 
 -- Toggle file tree
@@ -15,9 +16,9 @@ nnoremap("<C-f>", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
 nnoremap("<C-b>", "<cmd>lua require('telescope.builtin').buffers()<CR>")
 
 -- vim-test mappings
-nmap('<leader>t', '<cmd>TestNearest<CR>')
-nmap('<leader>T', '<cmd>TestFile<CR>')
-nmap('<leader>a', '<cmd>TestSuite<CR>')
+nmap("<leader>t", "<cmd>TestNearest<CR>")
+nmap("<leader>T", "<cmd>TestFile<CR>")
+nmap("<leader>a", "<cmd>TestSuite<CR>")
 
 -- Other.nvim mappings
 nnoremap("<leader>o", "<cmd>Other<CR>")
@@ -43,5 +44,9 @@ nnoremap("<leader>g", "<cmd>LazyGit<CR>")
 -- Reload vim config
 nnoremap("<leader>sv", "<cmd>luafile $MYVIMRC<CR>")
 
+-- Formatting
+nnoremap("<leader>F", "<cmd>Format<CR>")
+nnoremap("ö", "<cmd>FormatWrite<CR>")
+
 -- nnoremap("ö", "gg=G``")
-nnoremap("ö", "gg=G<C-o>")
+nnoremap("<leader>f", "gg=G<C-o>")
