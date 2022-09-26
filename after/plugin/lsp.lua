@@ -1,60 +1,59 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  automatic_installation = true
+  automatic_installation = true,
 })
 
 ------------------------------------------------------------------------
 -- Actions / Keybinds
 ------------------------------------------------------------------------
 
-vim.api.nvim_create_autocmd('User', {
-  pattern = 'LspAttached',
-  desc = 'LSP actions',
+vim.api.nvim_create_autocmd("User", {
+  pattern = "LspAttached",
+  desc = "LSP actions",
   callback = function()
     local bufmap = function(mode, lhs, rhs)
-      local opts = {buffer = true}
+      local opts = { buffer = true }
       vim.keymap.set(mode, lhs, rhs, opts)
     end
 
     -- Displays hover information about the symbol under the cursor
-    bufmap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
+    bufmap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>")
 
     -- Jump to the definition
-    bufmap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
+    bufmap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
 
     -- Jump to declaration
-    bufmap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
+    bufmap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
 
     -- Lists all the implementations for the symbol under the cursor
-    bufmap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
+    bufmap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>")
 
     -- Jumps to the definition of the type symbol
-    bufmap('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
+    bufmap("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
 
-    -- Lists all the references 
-    bufmap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
+    -- Lists all the references
+    bufmap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>")
 
     -- Displays a function's signature information
-    bufmap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
+    bufmap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
 
     -- Renames all references to the symbol under the cursor
-    bufmap('n', '<C-0>', '<cmd>lua vim.lsp.buf.rename()<cr>')
+    bufmap("n", "<C-0>", "<cmd>lua vim.lsp.buf.rename()<cr>")
 
     -- Selects a code action available at the current cursor position
-    bufmap('n', '<C-Enter>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
-    bufmap('x', '<C-Enter>', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
+    bufmap("n", "<C-Enter>", "<cmd>lua vim.lsp.buf.code_action()<cr>")
+    bufmap("x", "<C-Enter>", "<cmd>lua vim.lsp.buf.range_code_action()<cr>")
 
     -- Show diagnostics in a floating window
-    bufmap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
+    bufmap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>")
 
     -- Move to the previous diagnostic
-    bufmap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
+    bufmap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
 
     -- Move to the next diagnostic
-    bufmap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
-  end
+    bufmap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>")
+  end,
 })
-
 
 --------------------------------------------------------------------------------
 -- Defaults
@@ -62,33 +61,38 @@ vim.api.nvim_create_autocmd('User', {
 
 -- Setup cmp_nvim_lsp
 local lsp_defaults = {
-  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+  capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   on_attach = function()
-    vim.api.nvim_exec_autocmds('User', {pattern = 'LspAttached'})
+    vim.api.nvim_exec_autocmds("User", { pattern = "LspAttached" })
   end,
 }
 
 local lspconfig = require("lspconfig")
 
 -- Apply defaults to all configs
-lspconfig.util.default_config = vim.tbl_deep_extend('force', lspconfig.util.default_config, lsp_defaults)
-
+lspconfig.util.default_config = vim.tbl_deep_extend("force", lspconfig.util.default_config, lsp_defaults)
 
 --------------------------------------------------------------------------------
 -- LSP servers
 --------------------------------------------------------------------------------
 
+-- Rust
+lspconfig.rust_analyzer.setup({})
+
+-- Go
+lspconfig.gopls.setup({})
+
 -- Emmet
 lspconfig.emmet_ls.setup({
   filetypes = {
-    'html',
-    'javascriptreact',
-    'typescriptreact',
-    'svelte',
-    'vue',
-    'eruby',
-    'astro'
-  }
+    "html",
+    "javascriptreact",
+    "typescriptreact",
+    "svelte",
+    "vue",
+    "eruby",
+    "astro",
+  },
 })
 
 -- Typescript
@@ -99,7 +103,7 @@ lspconfig.svelte.setup({})
 
 -- Prisma
 lspconfig.prismals.setup({
-  root_dir = lspconfig.util.root_pattern('prisma/')
+  root_dir = lspconfig.util.root_pattern("prisma/"),
 })
 
 -- JSON
@@ -108,11 +112,11 @@ lspconfig.jsonls.setup({})
 -- HTML
 lspconfig.html.setup({
   filetypes = {
-    'html',
-    'eruby',
-    'astro',
-    'svelte'
-  }
+    "html",
+    "eruby",
+    "astro",
+    "svelte",
+  },
 })
 
 -- Docker
@@ -127,23 +131,28 @@ lspconfig.angularls.setup({})
 -- Talwind CSS
 lspconfig.tailwindcss.setup({
   filetypes = {
-    'html',
-    'css',
-    'scss',
-    'javascript',
-    'javascriptreact',
-    'typescript',
-    'typescriptreact',
-    'svelte',
-    'vue',
-    'markdown',
-    'eruby',
-    'astro'
+    "html",
+    "css",
+    "scss",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "svelte",
+    "vue",
+    "markdown",
+    "eruby",
+    "astro",
   },
   init_options = {
-    eruby = "erb"
+    eruby = "erb",
   },
-  root_dir = lspconfig.util.root_pattern("tailwind.config.js", "tailwind.config.cjs", "postcss.config.js", "postcss.config.cjs"),
+  root_dir = lspconfig.util.root_pattern(
+    "tailwind.config.js",
+    "tailwind.config.cjs",
+    "postcss.config.js",
+    "postcss.config.cjs"
+  ),
 })
 
 -- Solargraph
