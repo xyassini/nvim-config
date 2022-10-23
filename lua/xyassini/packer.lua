@@ -18,12 +18,7 @@ return require("packer").startup(function(use)
   use("nvim-lua/plenary.nvim") -- Required by telescope
   use("nvim-telescope/telescope.nvim") -- Fuzzy finder
   use("kyazdani42/nvim-web-devicons")
-  use({
-    "kosayoda/nvim-lightbulb",
-    requires = "antoinemadec/FixCursorHold.nvim",
-  })
   use("nvim-lualine/lualine.nvim") -- Statusline
-
   use("kyazdani42/nvim-tree.lua") -- File explorer
 
   ----------------------------------------
