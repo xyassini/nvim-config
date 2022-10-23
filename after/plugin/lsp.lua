@@ -1,8 +1,3 @@
-require("mason").setup()
-require("mason-lspconfig").setup({
-  automatic_installation = true,
-})
-
 ------------------------------------------------------------------------
 -- Actions / Keybinds
 ------------------------------------------------------------------------
@@ -40,10 +35,6 @@ vim.api.nvim_create_autocmd("User", {
     -- Renames all references to the symbol under the cursor
     bufmap("n", "<C-0>", "<cmd>lua vim.lsp.buf.rename()<cr>")
 
-    -- Selects a code action available at the current cursor position
-    bufmap("n", "<C-Enter>", "<cmd>lua vim.lsp.buf.code_action()<cr>")
-    bufmap("x", "<C-Enter>", "<cmd>lua vim.lsp.buf.range_code_action()<cr>")
-
     -- Show diagnostics in a floating window
     bufmap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>")
 
@@ -61,7 +52,7 @@ vim.api.nvim_create_autocmd("User", {
 
 -- Setup cmp_nvim_lsp
 local lsp_defaults = {
-  capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+  capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
   on_attach = function()
     vim.api.nvim_exec_autocmds("User", { pattern = "LspAttached" })
   end,

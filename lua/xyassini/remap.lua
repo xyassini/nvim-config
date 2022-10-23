@@ -45,11 +45,11 @@ nnoremap("<leader>g", "<cmd>LazyGit<CR>")
 nnoremap("<leader>sv", "<cmd>luafile $MYVIMRC<CR>")
 
 -- Formatting
-nnoremap("<leader>F", "<cmd>Format<CR>")
-nnoremap("ö", "<cmd>FormatWrite<CR>")
-
--- nnoremap("ö", "gg=G``")
+nnoremap("ö", "<cmd>lua vim.lsp.buf.format()<CR>")
 nnoremap("<leader>f", "gg=G<C-o>")
 
 -- Substitute keybind
 nnoremap("<leader>r", ":%s//g<left><left>")
+
+-- Code Actions Menu
+nnoremap("<C-Enter>", "<cmd>CodeActionMenu<CR>")

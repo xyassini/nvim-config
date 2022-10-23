@@ -43,7 +43,7 @@ cmp.setup({
     ["<Left>"] = cmp.mapping.scroll_docs(-4),
     ["<Right>"] = cmp.mapping.scroll_docs(4),
 
-    ["<ESC>"] = cmp.mapping.close(),
+    ["<C-ESC>"] = cmp.mapping.close(),
     ["<Tab>"] = cmp.mapping(function(fallback)
       -- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
       if cmp.visible() then

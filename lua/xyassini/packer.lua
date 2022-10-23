@@ -3,32 +3,37 @@ vim.cmd([[packadd packer.nvim]])
 return require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
 
+  use("wakatime/vim-wakatime")
+
+  ----------------------------------------
+  -- Themes
+  ----------------------------------------
+  use("folke/tokyonight.nvim")
+  use("ellisonleao/gruvbox.nvim")
+
   ----------------------------------------
   -- User Interface
   ----------------------------------------
-  use("folke/tokyonight.nvim") -- Theme
   use("sunjon/shade.nvim") -- Shade inactive windows
   use("nvim-lua/plenary.nvim") -- Required by telescope
   use("nvim-telescope/telescope.nvim") -- Fuzzy finder
-
+  use("kyazdani42/nvim-web-devicons")
   use({
-    "nvim-lualine/lualine.nvim",
-    requires = { "nvim-web-devicons" },
-  }) -- Statusline
+    "kosayoda/nvim-lightbulb",
+    requires = "antoinemadec/FixCursorHold.nvim",
+  })
+  use("nvim-lualine/lualine.nvim") -- Statusline
 
-  use({
-    "kyazdani42/nvim-tree.lua",
-    requires = {
-      "kyazdani42/nvim-web-devicons",
-    },
-  }) -- File explorer
+  use("kyazdani42/nvim-tree.lua") -- File explorer
 
   ----------------------------------------
   -- Language Server Protocol
   ----------------------------------------
-  use("williamboman/mason.nvim") -- LSP Installer
-  use("williamboman/mason-lspconfig.nvim") -- lspconfig wrapper for mason
+  use("williamboman/mason.nvim")
+  use("williamboman/mason-lspconfig.nvim")
+  use("jayp0521/mason-null-ls.nvim")
   use("neovim/nvim-lspconfig") -- LSP configuration
+  use("jose-elias-alvarez/null-ls.nvim")
   use("folke/trouble.nvim") -- diagnostics
 
   ----------------------------------------
@@ -76,8 +81,18 @@ return require("packer").startup(function(use)
   use("Pocco81/auto-save.nvim") -- Autosaves files on insert mode leave because I forget that too often
   use("ethanholz/nvim-lastplace") -- Automatically jumps to the last place I was in a file
   use("rgroli/other.nvim") -- Quickly open alternate files
-  use({ "nullishamy/formatter.nvim", branch = "feat/fallback-lsp" }) -- Code formatting
   use("ThePrimeagen/vim-be-good") -- Vim practice
+  use({
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-treesitter/nvim-treesitter" },
+    },
+  })
+  use({
+    "weilbith/nvim-code-action-menu",
+    cmd = "CodeActionMenu",
+  })
 
   ----------------------------------------
   -- Language Specific Stuff
