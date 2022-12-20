@@ -114,7 +114,19 @@ lspconfig.html.setup({
 lspconfig.dockerls.setup({})
 
 -- ESLint
-lspconfig.eslint.setup({})
+lspconfig.eslint.setup({
+  filetypes = {
+    "javascript",
+    "javascriptreact",
+    "javascript.jsx",
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx",
+    "vue",
+    "svelte",
+    "astro",
+  },
+})
 
 -- Angular
 lspconfig.angularls.setup({})
@@ -141,13 +153,16 @@ lspconfig.tailwindcss.setup({
   root_dir = lspconfig.util.root_pattern(
     "tailwind.config.js",
     "tailwind.config.cjs",
+    "windi.config.cjs",
+    "windi.config.js",
+    "windi.config.ts",
     "postcss.config.js",
     "postcss.config.cjs"
   ),
 })
 
 -- Solargraph
-lspconfig.solargraph.setup({})
+-- lspconfig.solargraph.setup({})
 
 -- Astro
 lspconfig.astro.setup({})
