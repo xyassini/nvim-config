@@ -86,6 +86,9 @@ lspconfig.emmet_ls.setup({
   },
 })
 
+-- C++
+lspconfig.sourcekit.setup({})
+
 -- Typescript
 lspconfig.tsserver.setup({})
 
