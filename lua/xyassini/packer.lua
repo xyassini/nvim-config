@@ -3,13 +3,10 @@ vim.cmd([[packadd packer.nvim]])
 return require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
 
-  use("wakatime/vim-wakatime")
-
   ----------------------------------------
   -- Themes
   ----------------------------------------
   use("folke/tokyonight.nvim")
-  use("ellisonleao/gruvbox.nvim")
 
   ----------------------------------------
   -- User Interface
@@ -22,6 +19,13 @@ return require("packer").startup(function(use)
   use("kyazdani42/nvim-tree.lua") -- File explorer
 
   ----------------------------------------
+  -- Productivity
+  ----------------------------------------
+  use("numToStr/Comment.nvim") -- Toggle Comment etc.
+  use("nvim-pack/nvim-spectre") -- Find and Replace
+  use("RRethy/vim-illuminate") -- Highlight current word/method/var
+
+  ----------------------------------------
   -- Language Server Protocol
   ----------------------------------------
   use("williamboman/mason.nvim")
@@ -30,17 +34,20 @@ return require("packer").startup(function(use)
   use("neovim/nvim-lspconfig") -- LSP configuration
   use("jose-elias-alvarez/null-ls.nvim")
   use("folke/trouble.nvim") -- diagnostics
+  use("ray-x/lsp_signature.nvim") -- function signatures on hover
+  use("mhartington/formatter.nvim") -- Format with prettier etc.
+  use("MunifTanjim/prettier.nvim")
 
   ----------------------------------------
   -- Autocomplete
   ----------------------------------------
   use("aca/emmet-ls") -- Emmet support
-  use("github/copilot.vim") -- Copilot support (AI code completion)
+  -- use("github/copilot.vim") -- Copilot support (AI code completion)
   use("hrsh7th/nvim-cmp") -- Autocomplete
   use("hrsh7th/cmp-nvim-lsp") -- LSP completion
   use("hrsh7th/cmp-buffer") -- Buffer completion
   use("hrsh7th/cmp-path") -- Path completion
-  use("hrsh7th/cmp-copilot") -- Copilot completion
+  -- use("hrsh7th/cmp-copilot") -- Copilot completion
   use({ "L3MON4D3/LuaSnip", tag = "v1.*" }) -- Snippets
   use("rafamadriz/friendly-snippets") -- Snippets
 
@@ -51,6 +58,7 @@ return require("packer").startup(function(use)
   use("windwp/nvim-ts-autotag") -- Auto-close HTML tags
   use("tpope/vim-surround") -- Quickly change surrounding brackets, quotes, tags, whatever
   use("nvim-treesitter/nvim-treesitter-context") -- Sticks the current method I'm in to the top
+  use({ "elgiano/nvim-treesitter-angular", branch = "topic/jsx-fix" }) -- Angular Treesitter
   use("sakshamgupta05/vim-todo-highlight") -- Highlights TODOs
 
   use({
@@ -64,6 +72,7 @@ return require("packer").startup(function(use)
   -- Git
   ----------------------------------------
   use("kdheepak/lazygit.nvim")
+  use("lewis6991/gitsigns.nvim") -- Git highlights on the left
 
   ----------------------------------------
   -- Testing
@@ -104,6 +113,9 @@ return require("packer").startup(function(use)
   use("elzr/vim-json")
   use("moll/vim-node")
   use("leafgarland/typescript-vim")
+
+  -- Angular
+  use("joeveiga/ng.nvim")
 
   -- Svelte
   use("othree/html5.vim")

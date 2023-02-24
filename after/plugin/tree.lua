@@ -1,8 +1,9 @@
 require("nvim-tree").setup({
   respect_buf_cwd = true,
-  open_on_setup = true,
-  open_on_setup_file = true,
   update_cwd = true,
+  view = {
+    width = 35
+  },
   update_focused_file = {
     enable = true,
     update_cwd = true,
@@ -12,3 +13,4 @@ require("nvim-tree").setup({
     auto_open = true,
   },
 })
+

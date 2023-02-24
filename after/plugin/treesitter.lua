@@ -1,11 +1,11 @@
 require('nvim-treesitter.configs').setup({
-  ensure_installed = { "lua", "css", "html", "javascript", "json", "ruby", "typescript", "yaml", "astro", "svelte" },
+  ensure_installed = { "lua", "css", "scss", "html", "javascript", "json", "yaml" },
   auto_install = true,
   highlight = {
     enable = true,
   },
   autotag = {
     enable = true,
-    filetypes = { "html", "javascript", "javascriptreact", "typescriptreact", "svelte", "vue", "astro", "eruby", "svelte" },
+    filetypes = { "html" },
   },
 })

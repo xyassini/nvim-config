@@ -7,7 +7,7 @@ local sources = {
     filetypes = default_filetypes,
   }),
 
-  null_ls.builtins.formatting.prettierd.with({
+  null_ls.builtins.formatting.prettier.with({
     filetypes = {
       "javascript",
       "javascriptreact",
@@ -38,7 +38,6 @@ local sources = {
   null_ls.builtins.diagnostics.jsonlint,
   null_ls.builtins.diagnostics.markdownlint,
   null_ls.builtins.diagnostics.stylelint,
-  null_ls.builtins.diagnostics.tidy,
   null_ls.builtins.diagnostics.todo_comments,
   null_ls.builtins.diagnostics.yamllint,
   null_ls.builtins.formatting.erb_lint,

@@ -1,9 +1,11 @@
 local nnoremap = require("xyassini.keymap").nnoremap
-local xnoremap = require("xyassini.keymap").xnoremap
+-- local xnoremap = require("xyassini.keymap").xnoremap
 local nmap = require("xyassini.keymap").nmap
 
--- Toggle file tree
-nnoremap("<leader>e", "<cmd>NvimTreeToggle<CR>")
+-- File Tree
+nnoremap("<leader>e", "<cmd>NvimTreeToggle<CR>") -- Toggle
+nnoremap("±", "<cmd>NvimTreeResize +5<CR>") -- Increase width
+nnoremap("–", "<cmd>NvimTreeResize -5<CR>") -- Decrease width
 
 -- Duplicate current line
 nnoremap("<leader>d", "yyp")
@@ -45,7 +47,8 @@ nnoremap("<leader>g", "<cmd>LazyGit<CR>")
 nnoremap("<leader>sv", "<cmd>luafile $MYVIMRC<CR>")
 
 -- Formatting
-nnoremap("ö", "<cmd>lua vim.lsp.buf.format()<CR>")
+-- nnoremap("ö", "<cmd>lua vim.lsp.buf.format()<CR>")
+nnoremap("ö", "<cmd>Format<CR>")
 nnoremap("<leader>f", "gg=G<C-o>")
 
 -- Substitute keybind
@@ -53,3 +56,17 @@ nnoremap("<leader>r", ":%s//g<left><left>")
 
 -- Code Actions Menu
 nnoremap("<C-Enter>", "<cmd>CodeActionMenu<CR>")
+
+-- Unload all buffers
+nnoremap("<C-Esc>", "<cmd>bufdo bwipeout<CR>")
+
+-- Spectre (Search and Replace)
+nnoremap("<leader>s", "<cmd>lua require('spectre').open()<CR>")
+nnoremap("<leader>sw", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
+nnoremap("<leader>sf", "<cmd>lua require('spectre').open_file_search()<CR>")
+
+nnoremap("<leader>k", "<cmd>lua require('lsp_signature').toggle_float_win()<CR>")
+
+nnoremap("<leader>at", "<cmd>lua require('ng').goto_template_for_component")
+nnoremap("<leader>ac", "<cmd>lua require('ng').goto_component_with_template_file")
+nnoremap("<leader>aT", "<cmd>lua require('ng').get_template_tcb")

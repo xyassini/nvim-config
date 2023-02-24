@@ -1,3 +1,12 @@
-require('telescope').setup({ 
-  file_ignore_patterns = {"node%_modules/", ".git/"},
+require('telescope').setup({
+  file_ignore_patterns = { "node_modules/", "node%_modules/", ".git/", ".vscode/" },
+  defaults = {
+    layout_strategy = 'horizontal',
+    layout_config = {
+      horizontal = {
+        width = 0.9,
+        height = 0.99
+      }
+    }
+  },
 })

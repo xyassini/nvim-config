@@ -53,7 +53,7 @@ vim.api.nvim_create_autocmd("User", {
 -- Setup cmp_nvim_lsp
 local lsp_defaults = {
   capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
-  on_attach = function()
+  on_attach = function(_, bufnr)
     vim.api.nvim_exec_autocmds("User", { pattern = "LspAttached" })
   end,
 }
@@ -68,10 +68,10 @@ lspconfig.util.default_config = vim.tbl_deep_extend("force", lspconfig.util.defa
 --------------------------------------------------------------------------------
 
 -- Rust
-lspconfig.rust_analyzer.setup({})
+-- lspconfig.rust_analyzer.setup({})
 
 -- Go
-lspconfig.gopls.setup({})
+-- lspconfig.gopls.setup({})
 
 -- Emmet
 lspconfig.emmet_ls.setup({
@@ -104,6 +104,7 @@ lspconfig.prismals.setup({
 lspconfig.jsonls.setup({})
 
 -- HTML
+--[[
 lspconfig.html.setup({
   filetypes = {
     "html",
@@ -112,6 +113,8 @@ lspconfig.html.setup({
     "svelte",
   },
 })
+]]
+--
 
 -- Docker
 lspconfig.dockerls.setup({})
@@ -164,6 +167,9 @@ lspconfig.tailwindcss.setup({
   ),
 })
 
+-- CSS & SCSS
+lspconfig.cssls.setup({})
+
 -- Solargraph
 -- lspconfig.solargraph.setup({})
 
@@ -171,7 +177,7 @@ lspconfig.tailwindcss.setup({
 lspconfig.astro.setup({})
 
 -- Lua
-lspconfig.sumneko_lua.setup({
+lspconfig.lua_ls.setup({
   cmd = { "lua-language-server" },
   settings = {
     Lua = {
@@ -190,4 +196,12 @@ lspconfig.sumneko_lua.setup({
       },
     },
   },
+})
+
+require("lsp_signature").setup({
+  bind = true,
+  handler_opts = {
+    border = "rounded"
+  },
+  always_trigger = true
 })
