@@ -60,6 +60,7 @@ return require("packer").startup(function(use)
   use("nvim-treesitter/nvim-treesitter-context") -- Sticks the current method I'm in to the top
   use({ "elgiano/nvim-treesitter-angular", branch = "topic/jsx-fix" }) -- Angular Treesitter
   use("sakshamgupta05/vim-todo-highlight") -- Highlights TODOs
+  use("tree-sitter/tree-sitter-embedded-template") -- Embedded template support
 
   use({
     "nvim-treesitter/nvim-treesitter",

@@ -267,6 +267,11 @@ _G.packer_plugins = {
     path = "/Users/yassinezeriouh/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+  ["tree-sitter-embedded-template"] = {
+    loaded = true,
+    path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/tree-sitter-embedded-template",
+    url = "https://github.com/tree-sitter/tree-sitter-embedded-template"
+  },
   ["trouble.nvim"] = {
     loaded = true,
     path = "/Users/yassinezeriouh/.local/share/nvim/site/pack/packer/start/trouble.nvim",
