@@ -52,6 +52,7 @@ return require("packer").startup(function(use)
   use("tpope/vim-surround") -- Quickly change surrounding brackets, quotes, tags, whatever
   use("nvim-treesitter/nvim-treesitter-context") -- Sticks the current method I'm in to the top
   use("sakshamgupta05/vim-todo-highlight") -- Highlights TODOs
+  use("tree-sitter/tree-sitter-embedded-template") -- Embedded template support
 
   use({
     "nvim-treesitter/nvim-treesitter",

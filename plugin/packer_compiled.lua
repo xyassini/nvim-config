@@ -247,6 +247,11 @@ _G.packer_plugins = {
     path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+  ["tree-sitter-embedded-template"] = {
+    loaded = true,
+    path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/tree-sitter-embedded-template",
+    url = "https://github.com/tree-sitter/tree-sitter-embedded-template"
+  },
   ["trouble.nvim"] = {
     loaded = true,
     path = "/Users/yassine/.local/share/nvim/site/pack/packer/start/trouble.nvim",
@@ -332,7 +337,7 @@ pcall(vim.api.nvim_create_user_command, 'CodeActionMenu', function(cmdargs)
           require('packer.load')({'nvim-code-action-menu'}, { cmd = 'CodeActionMenu', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'nvim-code-action-menu'}, { cmd = 'CodeActionMenu' }, _G.packer_plugins)
+          require('packer.load')({'nvim-code-action-menu'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('CodeActionMenu ', 'cmdline')
       end})
 time([[Defining lazy-load commands]], false)
