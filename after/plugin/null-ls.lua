@@ -19,6 +19,7 @@ local sources = {
       "html",
       "vue",
       "jsonc",
+      "ejs",
     },
   }),
 
