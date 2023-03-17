@@ -17,6 +17,7 @@ return require("packer").startup(function(use)
   use("kyazdani42/nvim-web-devicons")
   use("nvim-lualine/lualine.nvim") -- Statusline
   use("kyazdani42/nvim-tree.lua") -- File explorer
+  use("folke/which-key.nvim") -- Keybindings
 
   ----------------------------------------
   -- Productivity
@@ -42,12 +43,19 @@ return require("packer").startup(function(use)
   -- Autocomplete
   ----------------------------------------
   use("aca/emmet-ls") -- Emmet support
-  -- use("github/copilot.vim") -- Copilot support (AI code completion)
+  use("github/copilot.vim") -- Copilot support (AI code completion)
   use("hrsh7th/nvim-cmp") -- Autocomplete
   use("hrsh7th/cmp-nvim-lsp") -- LSP completion
   use("hrsh7th/cmp-buffer") -- Buffer completion
   use("hrsh7th/cmp-path") -- Path completion
-  -- use("hrsh7th/cmp-copilot") -- Copilot completion
+  use({ "zbirenbaum/copilot.lua" })
+  use({
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function()
+      require("copilot_cmp").setup()
+    end,
+  }) -- Copilot completion
   use({ "L3MON4D3/LuaSnip", tag = "v1.*" }) -- Snippets
   use("rafamadriz/friendly-snippets") -- Snippets
 

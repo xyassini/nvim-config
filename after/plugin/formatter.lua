@@ -11,5 +11,8 @@ formatter.setup({
     javascript = {
       require("formatter.defaults.prettier")
     },
+    lua = {
+      require("formatter.filetypes.lua").stylua
+    },
   }
 })

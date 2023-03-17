@@ -14,7 +14,7 @@ cmp.setup({
     { name = "path", keyword_length = 2 },
   }, {
     { name = "buffer" },
-    -- { name = "copilot" },
+    { name = "copilot" },
     { name = "luasnip", keyword_length = 2 },
   }),
 
@@ -30,7 +30,7 @@ cmp.setup({
         luasnip = "",
         buffer = "",
         path = "",
-        -- copilot = "ﮧ",
+        copilot = "ﮧ",
       })[entry.source.name]
       return vim_item
     end,
