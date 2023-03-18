@@ -18,9 +18,9 @@ nnoremap("<C-f>", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
 nnoremap("<C-b>", "<cmd>lua require('telescope.builtin').buffers()<CR>")
 
 -- vim-test mappings
-nmap("<leader>t", "<cmd>TestNearest<CR>")
-nmap("<leader>T", "<cmd>TestFile<CR>")
-nmap("<leader>a", "<cmd>TestSuite<CR>")
+nmap("<leader>tn", "<cmd>TestNearest<CR>")
+nmap("<leader>tf", "<cmd>TestFile<CR>")
+nmap("<leader>ts", "<cmd>TestSuite<CR>")
 
 -- Other.nvim mappings
 nnoremap("<leader>o", "<cmd>Other<CR>")
@@ -70,3 +70,8 @@ nnoremap("<leader>k", "<cmd>lua require('lsp_signature').toggle_float_win()<CR>"
 nnoremap("<leader>at", "<cmd>lua require('ng').goto_template_for_component")
 nnoremap("<leader>ac", "<cmd>lua require('ng').goto_component_with_template_file")
 nnoremap("<leader>aT", "<cmd>lua require('ng').get_template_tcb")
+
+
+-- Custom colorscheme toggle for working in the sun
+nnoremap("<leader>tt", "<cmd>lua ToggleTheme()<cr>")
+
