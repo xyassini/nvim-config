@@ -18,6 +18,7 @@ nnoremap("<C-b>", "<cmd>lua require('telescope.builtin').buffers()<CR>")
 -- Show all files from git status
 nnoremap("<C-g>", "<cmd>lua require('telescope.builtin').git_status()<CR>")
 
+
 -- Other.nvim mappings
 nnoremap("<leader>o", "<cmd>Other<CR>")
 nnoremap("<leader><Down>", "<cmd>OtherSplit<CR>")
@@ -70,4 +71,5 @@ nnoremap("<leader>tt", "<cmd>lua ToggleTheme()<cr>")
 -- High-speed logging
 nnoremap("<leader>l", "<cmd>lua require('logsitter').log()<cr>")
 
-
+-- Fix backward leap motion
+nmap("S", "<Plug>(leap-backward)")

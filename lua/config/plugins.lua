@@ -22,7 +22,7 @@ return {
       "NvimTreeOpen",
       "NvimTreeClose",
       "NvimTreeRefresh",
-      "NvimTreeFindFile"
+      "NvimTreeFindFile",
     },
     config = function()
       require("nvim-web-devicons").setup({ default = true })
@@ -110,6 +110,14 @@ return {
       require("plugins.lastplace")
     end,
   },
+  {
+    "ggandor/leap.nvim",
+    lazy = false,
+    dependencies = "tpope/vim-repeat",
+    config = function()
+      require("plugins.leap")
+    end,
+  },
 
   ----------------------------------------
   -- Syntax
@@ -147,7 +155,7 @@ return {
     "NvChad/nvim-colorizer.lua",
     config = function()
       require("plugins.colorizer")
-    end
+    end,
   },
 
   ----------------------------------------
