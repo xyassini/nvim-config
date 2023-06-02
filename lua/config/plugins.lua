@@ -103,6 +103,13 @@ return {
     "gaelph/logsitter.nvim",
     event = "BufEnter *.{ts,tsx,js,jsx,svelte,vue}",
   },
+  {
+    "ethanholz/nvim-lastplace",
+    event = "BufWinEnter",
+    config = function()
+      require("plugins.lastplace")
+    end,
+  },
 
   ----------------------------------------
   -- Syntax
