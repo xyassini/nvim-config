@@ -136,6 +136,12 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
   },
+  {
+    "NvChad/nvim-colorizer.lua",
+    config = function()
+      require("plugins.colorizer")
+    end
+  },
 
   ----------------------------------------
   -- LSP Base
@@ -153,9 +159,6 @@ return {
   {
     "williamboman/mason.nvim",
     cmd = "Mason",
-    config = function()
-      require("plugins.mason")
-    end,
   },
 
   ----------------------------------------
