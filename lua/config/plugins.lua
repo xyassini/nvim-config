@@ -17,6 +17,13 @@ return {
   { "nvim-lua/plenary.nvim" }, -- Required by telescope
   {
     "nvim-tree/nvim-web-devicons",
+    cmd = {
+      "NvimTreeToggle",
+      "NvimTreeOpen",
+      "NvimTreeClose",
+      "NvimTreeRefresh",
+      "NvimTreeFindFile"
+    },
     config = function()
       require("nvim-web-devicons").setup({ default = true })
     end,
@@ -91,6 +98,10 @@ return {
     "kylechui/nvim-surround",   -- Quickly change surrounding brackets, quotes, tags, whatever
     lazy = false,
     config = true,
+  },
+  {
+    "gaelph/logsitter.nvim",
+    event = "BufEnter *.{ts,tsx,js,jsx,svelte,vue}",
   },
 
   ----------------------------------------

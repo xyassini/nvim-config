@@ -15,12 +15,14 @@ nnoremap("<C-p>", "<cmd>lua require('telescope.builtin').find_files()<CR>")
 nnoremap("<C-f>", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
 -- Show all recent buffers
 nnoremap("<C-b>", "<cmd>lua require('telescope.builtin').buffers()<CR>")
+-- Show all files from git status
+nnoremap("<C-g>", "<cmd>lua require('telescope.builtin').git_status()<CR>")
 
 -- Other.nvim mappings
--- nnoremap("<leader>o", "<cmd>Other<CR>")
--- nnoremap("<leader><Down>", "<cmd>OtherSplit<CR>")
--- nnoremap("<leader><Right>", "<cmd>OtherVSplit<CR>")
--- nnoremap("<leader>c", "<cmd>OtherClear<CR>")
+nnoremap("<leader>o", "<cmd>Other<CR>")
+nnoremap("<leader><Down>", "<cmd>OtherSplit<CR>")
+nnoremap("<leader><Right>", "<cmd>OtherVSplit<CR>")
+nnoremap("<leader>c", "<cmd>OtherClear<CR>")
 
 -- Move through panes in light speed (at least on a German keyboard)
 nnoremap("+", "<C-w>l")
@@ -62,8 +64,10 @@ nnoremap("<leader>at", "<cmd>lua require('ng').goto_template_for_component")
 nnoremap("<leader>ac", "<cmd>lua require('ng').goto_component_with_template_file")
 nnoremap("<leader>aT", "<cmd>lua require('ng').get_template_tcb")
 
-
 -- Custom colorscheme toggle for working in the sun
 nnoremap("<leader>tt", "<cmd>lua ToggleTheme()<cr>")
+
+-- High-speed logging
+nnoremap("<leader>l", "<cmd>lua require('logsitter').log()<cr>")
 
 
