@@ -66,7 +66,7 @@ local root_dir = require("lspconfig.util").root_pattern(
   "postcss.config.cjs"
 )
 
-M.on_attach = on_attach
+-- M.on_attach = on_attach
 M.filetypes = filetypes
 M.capabilities = capabilities
 M.settings = settings
