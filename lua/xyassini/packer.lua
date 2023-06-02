@@ -1,6 +1,12 @@
 vim.cmd([[packadd packer.nvim]])
 
-return require("packer").startup(function(use)
+local status, packer = pcall(require, "packer")
+if (not status) then
+  print("Packer not installed.")
+  return
+end
+
+return packer.startup(function(use)
   use("wbthomason/packer.nvim")
 
   ----------------------------------------

@@ -1,4 +1,8 @@
-local null_ls = require("null-ls")
+local status, null_ls = pcall(require, "null-ls")
+
+if (not status) then
+  return
+end
 
 local default_filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "astro", "svelte" }
 

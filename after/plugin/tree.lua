@@ -1,8 +1,13 @@
-require("nvim-tree").setup({
+local status, tree = pcall(require, "nvim-tree")
+if not status then
+  return
+end
+
+tree.setup({
   respect_buf_cwd = true,
   update_cwd = true,
   view = {
-    width = 35
+    width = 35,
   },
   update_focused_file = {
     enable = true,
@@ -13,4 +18,3 @@ require("nvim-tree").setup({
     auto_open = true,
   },
 })
-

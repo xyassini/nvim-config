@@ -1,4 +1,9 @@
-require("treesitter-context").setup({
+local status, treesitter_context = pcall(require, "treesitter-context")
+if (not status) then
+  return
+end
+
+treesitter_context.setup({
   enable = true,
   patterns = {
     default = {

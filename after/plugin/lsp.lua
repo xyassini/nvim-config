@@ -1,3 +1,11 @@
+local status, lspconfig = pcall(require, "lspconfig")
+
+if (not status) then
+  return
+end
+
+
+
 ------------------------------------------------------------------------
 -- Actions / Keybinds
 ------------------------------------------------------------------------
@@ -51,14 +59,19 @@ vim.api.nvim_create_autocmd("User", {
 --------------------------------------------------------------------------------
 
 -- Setup cmp_nvim_lsp
+
+local cmp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if (not cmp_status) then
+  return
+end
+
 local lsp_defaults = {
-  capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+  capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities()),
   on_attach = function(_, bufnr)
     vim.api.nvim_exec_autocmds("User", { pattern = "LspAttached" })
   end,
 }
 
-local lspconfig = require("lspconfig")
 
 -- Apply defaults to all configs
 lspconfig.util.default_config = vim.tbl_deep_extend("force", lspconfig.util.default_config, lsp_defaults)
@@ -81,6 +94,7 @@ lspconfig.emmet_ls.setup({
     "typescriptreact",
     "svelte",
     "vue",
+    -- "ejs",
     "eruby",
     "astro",
   },
@@ -198,7 +212,12 @@ lspconfig.lua_ls.setup({
   },
 })
 
-require("lsp_signature").setup({
+local signature_status, lsp_signature = pcall(require, "lsp_signature")
+if (not signature_status) then
+  return
+end
+
+lsp_signature.setup({
   bind = true,
   handler_opts = {
     border = "rounded"

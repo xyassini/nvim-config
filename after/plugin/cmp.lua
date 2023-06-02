@@ -1,4 +1,8 @@
-local cmp = require("cmp")
+local status, cmp = pcall(require, "cmp")
+
+if (not status) then
+  return
+end
 
 local select_opts = { behavior = cmp.SelectBehavior.Select }
 
