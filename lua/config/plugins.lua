@@ -203,7 +203,20 @@ return {
   ----------------------------------------
   -- LSP - Addons
   ----------------------------------------
-  { "jose-elias-alvarez/typescript.nvim" },
+  {
+    "jose-elias-alvarez/typescript.nvim",
+    event = "BufReadPre",
+    ft = {
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact",
+      "svelte"
+    },
+    config = function()
+      require("plugins.typescript")
+    end,
+  },
   {
     "axelvc/template-string.nvim",
     event = "InsertEnter",
