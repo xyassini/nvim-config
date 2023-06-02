@@ -211,7 +211,7 @@ return {
       "typescript",
       "javascriptreact",
       "typescriptreact",
-      "svelte"
+      "svelte",
     },
     config = function()
       require("plugins.typescript")
@@ -230,7 +230,7 @@ return {
   },
   {
     "lvimuser/lsp-inlayhints.nvim",
-    branch = "main", -- or "anticonceal"
+    event = "LspAttach",
     config = function()
       require("plugins.inlay-hints")
     end,
@@ -273,7 +273,14 @@ return {
   {
     "vuki656/package-info.nvim",
     event = "BufEnter package.json",
-    config = true, -- run require("package-info").setup()
+    config = function()
+      require("plugins.package-info")
+    end,
+  },
+  {
+    "dmmulroy/tsc.nvim",
+    event = "BufEnter *.ts",
+    config = true, -- run require("tsc").setup()
   },
 
   ----------------------------------------
