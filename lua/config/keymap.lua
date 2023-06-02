@@ -1,6 +1,5 @@
-local nnoremap = require("xyassini.keymap").nnoremap
--- local xnoremap = require("xyassini.keymap").xnoremap
-local nmap = require("xyassini.keymap").nmap
+local nnoremap = require("utils.remap").nnoremap
+local nmap = require("utils.remap").nmap
 
 -- File Tree
 nnoremap("<leader>e", "<cmd>NvimTreeToggle<CR>") -- Toggle
@@ -17,16 +16,11 @@ nnoremap("<C-f>", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
 -- Show all recent buffers
 nnoremap("<C-b>", "<cmd>lua require('telescope.builtin').buffers()<CR>")
 
--- vim-test mappings
-nmap("<leader>tn", "<cmd>TestNearest<CR>")
-nmap("<leader>tf", "<cmd>TestFile<CR>")
-nmap("<leader>ts", "<cmd>TestSuite<CR>")
-
 -- Other.nvim mappings
-nnoremap("<leader>o", "<cmd>Other<CR>")
-nnoremap("<leader><Down>", "<cmd>OtherSplit<CR>")
-nnoremap("<leader><Right>", "<cmd>OtherVSplit<CR>")
-nnoremap("<leader>c", "<cmd>OtherClear<CR>")
+-- nnoremap("<leader>o", "<cmd>Other<CR>")
+-- nnoremap("<leader><Down>", "<cmd>OtherSplit<CR>")
+-- nnoremap("<leader><Right>", "<cmd>OtherVSplit<CR>")
+-- nnoremap("<leader>c", "<cmd>OtherClear<CR>")
 
 -- Move through panes in light speed (at least on a German keyboard)
 nnoremap("+", "<C-w>l")
@@ -43,12 +37,9 @@ nnoremap("<C-ß>", "<cmd>:sp<CR><cmd>lua require('telescope.builtin').find_files
 -- Open LazyGit
 nnoremap("<leader>g", "<cmd>LazyGit<CR>")
 
--- Reload vim config
-nnoremap("<leader>sv", "<cmd>luafile $MYVIMRC<CR>")
-
 -- Formatting
--- nnoremap("ö", "<cmd>lua vim.lsp.buf.format()<CR>")
-nnoremap("ö", "<cmd>Format<CR>")
+nnoremap("ö", "<cmd>lua vim.lsp.buf.format()<CR>")
+-- nnoremap("ö", "<cmd>Format<CR>")
 nnoremap("<leader>f", "gg=G<C-o>")
 
 -- Substitute keybind
@@ -74,4 +65,5 @@ nnoremap("<leader>aT", "<cmd>lua require('ng').get_template_tcb")
 
 -- Custom colorscheme toggle for working in the sun
 nnoremap("<leader>tt", "<cmd>lua ToggleTheme()<cr>")
+
 
