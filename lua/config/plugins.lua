@@ -59,6 +59,14 @@ return {
       require("plugins.shade")
     end,
   },
+  {
+    "stevearc/dressing.nvim",
+    event = "VeryLazy",
+    dependencies = "MunifTanjim/nui.nvim",
+    config = function()
+      require("plugins.dressing")
+    end,
+  },
 
   ----------------------------------------
   -- Productivity
