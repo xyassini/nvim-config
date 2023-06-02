@@ -232,6 +232,7 @@ return {
   ----------------------------------------
   -- LSP - Addons
   ----------------------------------------
+  { "nvim-lua/popup.nvim" },
   {
     "jose-elias-alvarez/typescript.nvim",
     event = "BufReadPre",
@@ -308,7 +309,7 @@ return {
   },
   {
     "dmmulroy/tsc.nvim",
-    event = "BufEnter *.ts",
+    cmd = "TSC",
     config = true, -- run require("tsc").setup()
   },
 

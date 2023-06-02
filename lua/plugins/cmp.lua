@@ -1,5 +1,6 @@
 local cmp_status, cmp = pcall(require, "cmp")
 if not cmp_status then
+  print("[LS] cmp_status: " .. vim.inspect(cmp_status))
   return
 end
 
@@ -7,21 +8,21 @@ local types = require("cmp.types")
 
 local snip_status, luasnip = pcall(require, "luasnip")
 if not snip_status then
+  print("[LS] snip_status: " .. vim.inspect(snip_status))
   return
 end
 
 local copilot_status, copilot_cmp_comparators = pcall(require, "copilot_cmp.comparators")
+if not copilot_status then
+  print("[LS] copilot_status: " .. vim.inspect(copilot_status))
+  return
+end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
 -- ╭──────────────────────────────────────────────────────────╮
 -- │ Utils                                                    │
 -- ╰──────────────────────────────────────────────────────────╯
-local check_backspace = function()
-  local col = vim.fn.col(".") - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
-end
-
 local function deprioritize_snippet(entry1, entry2)
   if entry1:get_kind() == types.lsp.CompletionItemKind.Snippet then
     return false
@@ -59,38 +60,6 @@ local function limit_lsp_types(entry, ctx)
   return true
 end
 
-local has_words_before = function()
-  if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
-    return false
-  end
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
-end
-
---- Get completion context, i.e., auto-import/target module location.
---- Depending on the LSP this information is stored in different parts of the
---- lsp.CompletionItem payload. The process to find them is very manual: log the payloads
---- And see where useful information is stored.
----@param completion lsp.CompletionItem
----@param source cmp.Source
----@see Astronvim, because i just discovered they're already doing this thing, too
---  https://github.com/AstroNvim/AstroNvim
-local function get_lsp_completion_context(completion, source)
-  local ok, source_name = pcall(function()
-    return source.source.client.config.name
-  end)
-  if not ok then
-    return nil
-  end
-  if source_name == "tsserver" then
-    return completion.detail
-  elseif source_name == "pyright" then
-    if completion.labelDetails ~= nil then
-      return completion.labelDetails.description
-    end
-  end
-end
-
 -- ╭──────────────────────────────────────────────────────────╮
 -- │ Setup                                                    │
 -- ╰──────────────────────────────────────────────────────────╯
@@ -113,8 +82,8 @@ cmp.setup({
     end,
   },
   mapping = {
-    ["<Up>"] = cmp.mapping.select_prev_item(select_opts),
-    ["<Down>"] = cmp.mapping.select_next_item(select_opts),
+    ["<Up>"] = cmp.mapping.select_prev_item(),
+    ["<Down>"] = cmp.mapping.select_next_item(),
     ["<Left>"] = cmp.mapping.scroll_docs(-4),
     ["<Right>"] = cmp.mapping.scroll_docs(4),
 
@@ -138,16 +107,16 @@ cmp.setup({
     fields = { "menu", "abbr", "kind" },
     format = function(entry, vim_item)
       vim_item.menu = ({
-  npm = "npm",
-  Copilot = "ﮧ",
-  nvim_lsp = "",
-  buffer = "",
-  nvim_lua = "",
-  luasnip = "",
-  calc = "",
-  path = "",
-  treesitter = "",
-  zsh = "",
+        npm = "npm",
+        Copilot = "ﮧ",
+        nvim_lsp = "",
+        buffer = "",
+        nvim_lua = "",
+        luasnip = "",
+        calc = "",
+        path = "",
+        treesitter = "",
+        zsh = "",
       })[entry.source.name]
       return vim_item
     end,
@@ -158,13 +127,13 @@ cmp.setup({
       priority = 10,
       entry_filter = limit_lsp_types,
     },
-    { name = "npm",         priority = 9 },
-    { name = "copilot",     priority = 9 },
-    { name = "luasnip",     priority = 7, max_item_count = 5 },
-    { name = "buffer",      priority = 7, keyword_length = 5, option = buffer_option, max_item_count = 5 },
-    { name = "nvim_lua",    priority = 5 },
-    { name = "path",        priority = 4 },
-    { name = "calc",        priority = 3 },
+    { name = "npm",      priority = 9 },
+    { name = "copilot",  priority = 9 },
+    { name = "luasnip",  priority = 7, max_item_count = 5 },
+    { name = "buffer",   priority = 7, keyword_length = 5, option = buffer_option, max_item_count = 5 },
+    { name = "nvim_lua", priority = 5 },
+    { name = "path",     priority = 4 },
+    { name = "calc",     priority = 3 },
   },
   sorting = {
     comparators = {
@@ -195,4 +164,3 @@ cmp.setup({
     ghost_text = true,
   },
 })
-
