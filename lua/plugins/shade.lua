@@ -5,7 +5,7 @@ if (not status) then
 end
 
 shade.setup({
-  overlayy_opacity = 50,
+  overlay_opacity = 60,
   opacity_step = 1,
   exclude_filetypes = { "NvimTree", "mason" },
   keys = {
