@@ -95,7 +95,7 @@ return {
   },
   { "nvim-pack/nvim-spectre" }, -- Find and replace
   {
-    "kylechui/nvim-surround",   -- Quickly change surrounding brackets, quotes, tags, whatever
+    "kylechui/nvim-surround", -- Quickly change surrounding brackets, quotes, tags, whatever
     lazy = false,
     config = true,
   },
@@ -257,6 +257,12 @@ return {
     config = function()
       require("plugins.copilot")
     end,
+  },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    event = "BufEnter",
+    config = true,
   },
 
   ----------------------------------------

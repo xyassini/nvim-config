@@ -51,6 +51,7 @@
   "template-string.nvim": { "branch": "main", "commit": "e347d83c80bd1ec77e13a37962013199d216a8cd" },
   "tokyonight.nvim": { "branch": "main", "commit": "161114bd39b990995e08dbf941f6821afbdcd666" },
   "tree-sitter-embedded-template": { "branch": "master", "commit": "203f7bd3c1bbfbd98fc19add4b8fcb213c059205" },
+  "trouble.nvim": { "branch": "main", "commit": "324c977cfeacb8498ca9ba1c74cc35bd18858a8d" },
   "tsc.nvim": { "branch": "main", "commit": "a3661c71b7f5989885437af11c907bf760095350" },
   "typescript.nvim": { "branch": "main", "commit": "f66d4472606cb24615dfb7dbc6557e779d177624" },
   "vim-illuminate": { "branch": "master", "commit": "a2907275a6899c570d16e95b9db5fd921c167502" },

@@ -6,9 +6,6 @@ nnoremap("<leader>e", "<cmd>NvimTreeToggle<CR>") -- Toggle
 nnoremap("±", "<cmd>NvimTreeResize +5<CR>") -- Increase width
 nnoremap("–", "<cmd>NvimTreeResize -5<CR>") -- Decrease width
 
--- Duplicate current line
-nnoremap("<leader>d", "yyp")
-
 -- Fuzzy find files
 nnoremap("<C-p>", "<cmd>lua require('telescope.builtin').find_files()<CR>")
 -- Greo in all files
@@ -73,3 +70,6 @@ nnoremap("<leader>l", "<cmd>lua require('logsitter').log()<cr>")
 
 -- Fix backward leap motion
 nmap("S", "<Plug>(leap-backward)")
+
+-- Toggle Trouble Diagnostic List
+nnoremap("<leader>d", "<cmd>TroubleToggle<cr>")
