@@ -233,20 +233,7 @@ return {
   -- LSP - Addons
   ----------------------------------------
   { "nvim-lua/popup.nvim" },
-  {
-    "jose-elias-alvarez/typescript.nvim",
-    event = "BufReadPre",
-    ft = {
-      "javascript",
-      "typescript",
-      "javascriptreact",
-      "typescriptreact",
-      "svelte",
-    },
-    config = function()
-      require("plugins.typescript")
-    end,
-  },
+  { "jose-elias-alvarez/typescript.nvim" },
   {
     "axelvc/template-string.nvim",
     event = "InsertEnter",
@@ -260,7 +247,6 @@ return {
   },
   {
     "lvimuser/lsp-inlayhints.nvim",
-    event = "LspAttach",
     config = function()
       require("plugins.inlay-hints")
     end,
