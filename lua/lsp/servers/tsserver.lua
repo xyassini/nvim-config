@@ -1,3 +1,4 @@
+local config = require("user.config")
 local M = {}
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -52,7 +53,9 @@ local on_attach = function(client, bufnr)
 
   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
-  require("lsp-inlayhints").on_attach(client, bufnr)
+  if config.plugins.inlayhints then
+    require("lsp-inlayhints").on_attach(client, bufnr)
+  end
 end
 
 local function filter(arr, fn)

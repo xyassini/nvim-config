@@ -1,3 +1,4 @@
+local config = require("user.config")
 return {
   ----------------------------------------
   -- Themes
@@ -247,6 +248,7 @@ return {
   },
   {
     "lvimuser/lsp-inlayhints.nvim",
+    cond = config.plugins.inlayhints,
     config = function()
       require("plugins.inlay-hints")
     end,
