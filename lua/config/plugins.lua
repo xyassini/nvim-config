@@ -18,20 +18,12 @@ return {
   { "nvim-lua/plenary.nvim" }, -- Required by telescope
   {
     "nvim-tree/nvim-web-devicons",
-    cmd = {
-      "NvimTreeToggle",
-      "NvimTreeOpen",
-      "NvimTreeClose",
-      "NvimTreeRefresh",
-      "NvimTreeFindFile",
-    },
-    config = function()
-      require("nvim-web-devicons").setup({ default = true })
-    end,
+    lazy = false,
+    config = true,
   },
   {
     "nvim-telescope/telescope.nvim",
-    lazy = false,
+    cmd = "Telescope",
     dependencies = {
       { "nvim-lua/popup.nvim" },
       { "nvim-lua/plenary.nvim" },
@@ -44,31 +36,37 @@ return {
   },
   {
     "nvim-tree/nvim-tree.lua",
+    cmd = {
+      "NvimTreeToggle",
+      "NvimTreeOpen",
+    },
     config = function()
       require("plugins.tree")
     end,
   },
   {
     "nvim-lualine/lualine.nvim",
+    event = "BufEnter",
     config = function()
       require("plugins.lualine")
     end,
   },
   {
     "folke/which-key.nvim",
+    event = "VeryLazy",
     config = function()
       require("plugins.which-key")
     end,
   },
   {
     "andreadev-it/shade.nvim",
-    event = "BufReadPre",
+    event = "BufWinEnter",
     config = function()
       require("plugins.shade")
     end,
   },
   {
-    "stevearc/dressing.nvim",
+    "stevearc/dressing.nvim", -- Improved UIs
     event = "VeryLazy",
     dependencies = "MunifTanjim/nui.nvim",
     config = function()
@@ -89,15 +87,20 @@ return {
   },
   {
     "RRethy/vim-illuminate", -- Highlight current word/method/var
-    lazy = false,
+    event = "InsertEnter",
     config = function()
       require("plugins.illuminate")
     end,
   },
-  { "nvim-pack/nvim-spectre" }, -- Find and replace
+  {
+    "nvim-pack/nvim-spectre",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  }, -- Find and replace
   {
     "kylechui/nvim-surround", -- Quickly change surrounding brackets, quotes, tags, whatever
-    lazy = false,
+    keys = { "c" },
     config = true,
   },
   {
@@ -113,7 +116,7 @@ return {
   },
   {
     "ggandor/leap.nvim",
-    lazy = false,
+    keys = { "s", "S", "g" },
     dependencies = "tpope/vim-repeat",
     config = function()
       require("plugins.leap")
@@ -154,6 +157,7 @@ return {
   },
   {
     "NvChad/nvim-colorizer.lua",
+    event = "BufEnter",
     config = function()
       require("plugins.colorizer")
     end,
@@ -233,8 +237,14 @@ return {
   ----------------------------------------
   -- LSP - Addons
   ----------------------------------------
-  { "nvim-lua/popup.nvim" },
-  { "jose-elias-alvarez/typescript.nvim" },
+  {
+    "nvim-lua/popup.nvim",
+    event = "VeryLazy",
+  },
+  {
+    "jose-elias-alvarez/typescript.nvim",
+    event = "BufReadPre *",
+  },
   {
     "axelvc/template-string.nvim",
     event = "InsertEnter",
@@ -248,6 +258,7 @@ return {
   },
   {
     "lvimuser/lsp-inlayhints.nvim",
+    event = "BufWinEnter",
     cond = config.plugins.inlayhints,
     config = function()
       require("plugins.inlay-hints")
