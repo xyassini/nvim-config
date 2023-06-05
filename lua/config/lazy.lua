@@ -23,7 +23,7 @@ lazy.setup("config.plugins", {
   checker = {
     enabled = true,
     notify = false,
-    frequency = 3600 * 24,
+    frequency = 3600 * 4,
   },
   change_detection = {
     notify = false,

@@ -1,5 +1,5 @@
 local status, tokyonight = pcall(require, "tokyonight")
-if (not status) then
+if not status then
   return
 end
 
@@ -50,5 +50,3 @@ function ToggleTheme()
 end
 
 darkTheme()
-
-

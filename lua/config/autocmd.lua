@@ -1,6 +1,6 @@
 local function open_nvim_tree(data)
   local tree_status, tree_api = pcall(require, "nvim-tree.api")
-  if (not tree_status) then
+  if not tree_status then
     print("Error: Could not load nvim-tree api")
     return
   end
