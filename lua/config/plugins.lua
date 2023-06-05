@@ -297,6 +297,7 @@ return {
   {
     "vuki656/package-info.nvim",
     event = "BufEnter package.json",
+    dependencies = { "MunifTanjim/nui.nvim" },
     config = function()
       require("plugins.package-info")
     end,
@@ -312,7 +313,8 @@ return {
   ----------------------------------------
   {
     "Pocco81/auto-save.nvim",
-    event = "InsertLeave",
+    cond = config.plugins.auto_save.enabled,
+    event = config.plugins.auto_save.events,
     config = function()
       require("plugins.auto-save")
     end,
