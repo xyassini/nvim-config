@@ -79,7 +79,7 @@ return {
   ----------------------------------------
   {
     "numToStr/Comment.nvim", -- Toggle Comments
-    event = "BufReadPre",
+    event = "BufEnter *.*",
     branch = "jsx",
     config = function()
       require("plugins.comment")
@@ -128,7 +128,7 @@ return {
   ----------------------------------------
   {
     "windwp/nvim-autopairs", -- Auto-match brackets and quotes
-    event = "InsertEnter",
+    event = "InsertEnter *.*",
     config = function()
       require("plugins.autopairs")
     end,
@@ -168,7 +168,7 @@ return {
   ----------------------------------------
   {
     "neovim/nvim-lspconfig",
-    event = "BufReadPre",
+    event = "BufEnter",
     dependencies = {
       "mason.nvim",
       "williamboman/mason-lspconfig.nvim",
@@ -239,11 +239,9 @@ return {
   ----------------------------------------
   {
     "nvim-lua/popup.nvim",
-    event = "VeryLazy",
   },
   {
     "jose-elias-alvarez/typescript.nvim",
-    event = "BufReadPre *",
   },
   {
     "axelvc/template-string.nvim",
@@ -332,7 +330,7 @@ return {
   },
   {
     "rgroli/other.nvim",
-    event = "BufReadPre",
+    event = "BufWinEnter *.{html,css,scss,ts}",
     config = function()
       require("plugins.other")
     end,
