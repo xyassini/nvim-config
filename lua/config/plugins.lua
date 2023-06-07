@@ -105,11 +105,11 @@ return {
   },
   {
     "gaelph/logsitter.nvim",
-    event = "BufEnter *.{ts,tsx,js,jsx,svelte,vue}",
+    event = "BufEnter *.*",
   },
   {
     "ethanholz/nvim-lastplace",
-    event = "BufWinEnter",
+    event = "BufWinEnter *.*",
     config = function()
       require("plugins.lastplace")
     end,
@@ -142,7 +142,7 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    event = "BufReadPre",
+    event = "BufRead *.*",
     config = function()
       require("plugins.treesitter")
     end,
@@ -154,7 +154,7 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter-context",
-    event = "BufReadPre",
+    event = "BufWinEnter *.*",
     config = function()
       require("plugins.treesitter-context")
     end,
@@ -164,7 +164,7 @@ return {
   },
   {
     "NvChad/nvim-colorizer.lua",
-    event = "BufEnter",
+    event = "BufEnter *.*",
     config = function()
       require("plugins.colorizer")
     end,
@@ -175,7 +175,7 @@ return {
   ----------------------------------------
   {
     "neovim/nvim-lspconfig",
-    event = "BufEnter",
+    event = "BufRead *.*",
     dependencies = {
       "mason.nvim",
       "williamboman/mason-lspconfig.nvim",
@@ -193,7 +193,7 @@ return {
   ----------------------------------------
   {
     "jose-elias-alvarez/null-ls.nvim",
-    event = "BufNewFile",
+    event = "BufRead *.*",
     dependencies = { "mason.nvim" },
   },
   {
@@ -213,7 +213,7 @@ return {
   ----------------------------------------
   {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
+    event = "InsertEnter *.*",
     config = function()
       require("plugins.cmp")
     end,
@@ -252,7 +252,7 @@ return {
   },
   {
     "axelvc/template-string.nvim",
-    event = "InsertEnter",
+    event = "InsertEnter *.{svelte,ts,tsx,js,jsx}",
     ft = {
       "javascript",
       "typescript",
@@ -263,7 +263,7 @@ return {
   },
   {
     "lvimuser/lsp-inlayhints.nvim",
-    event = "BufWinEnter",
+    event = "BufWinEnter *.*",
     cond = config.plugins.inlayhints,
     config = function()
       require("plugins.inlay-hints")
@@ -279,7 +279,7 @@ return {
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    event = "BufEnter",
+    event = "BufEnter *.*",
     config = true,
   },
 
@@ -288,7 +288,7 @@ return {
   ----------------------------------------
   {
     "lewis6991/gitsigns.nvim",
-    event = "BufReadPre",
+    event = "BufRead *.*",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require("plugins.gitsigns")
@@ -345,5 +345,12 @@ return {
   {
     "weilbith/nvim-code-action-menu",
     cmd = "CodeActionMenu",
+  },
+  {
+    "code-biscuits/nvim-biscuits",
+    event = "BufRead *.*",
+    config = function()
+      require("plugins.biscuits")
+    end,
   },
 }
