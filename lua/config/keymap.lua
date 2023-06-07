@@ -14,6 +14,8 @@ nnoremap("<C-f>", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
 nnoremap("<C-b>", "<cmd>lua require('telescope.builtin').buffers()<CR>")
 -- Show all files from git status
 nnoremap("<C-g>", "<cmd>lua require('telescope.builtin').git_status()<CR>")
+-- Project Picker
+nnoremap("<leader>p", "<cmd>lua require('telescope').extensions.projects.projects()<cr>")
 
 -- Other.nvim mappings
 nnoremap("<leader>o", "<cmd>Other<CR>")
@@ -72,3 +74,4 @@ nmap("S", "<Plug>(leap-backward)")
 
 -- Toggle Trouble Diagnostic List
 nnoremap("<leader>d", "<cmd>TroubleToggle<cr>")
+

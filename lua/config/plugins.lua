@@ -122,6 +122,13 @@ return {
       require("plugins.leap")
     end,
   },
+  {
+    "ahmedkhalf/project.nvim",
+    event = "VimEnter",
+    config = function()
+      require("plugins.project")
+    end,
+  },
 
   ----------------------------------------
   -- Syntax
