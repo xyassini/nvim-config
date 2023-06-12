@@ -353,4 +353,14 @@ return {
       require("plugins.biscuits")
     end,
   },
+
+
+  ----------------------------------------
+  -- Language Support
+  ----------------------------------------
+  {
+    "dag/vim-fish",
+    ft = "fish",
+    event = "BufEnter *.fish"
+  }
 }
