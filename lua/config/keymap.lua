@@ -21,7 +21,6 @@ nnoremap("<leader>p", "<cmd>lua require('telescope').extensions.projects.project
 nnoremap("<leader>o", "<cmd>Other<CR>")
 nnoremap("<leader><Down>", "<cmd>OtherSplit<CR>")
 nnoremap("<leader><Right>", "<cmd>OtherVSplit<CR>")
-nnoremap("<leader>c", "<cmd>OtherClear<CR>")
 
 -- Move through panes in light speed (at least on a German keyboard)
 nnoremap("+", "<C-w>l")
@@ -74,4 +73,16 @@ nmap("S", "<Plug>(leap-backward)")
 
 -- Toggle Trouble Diagnostic List
 nnoremap("<leader>d", "<cmd>TroubleToggle<cr>")
+
+-- ChatGPT
+nnoremap("<leader>cc", "<cmd>ChatGPT<CR>")
+nnoremap("<leader>ca", "<cmd>ChatGPTActAs<CR>")
+nnoremap("<leader>ce", "<cmd>ChatGPTEditWithInstructions<CR>")
+nnoremap("<leader>cd", "<cmd>ChatGPTRun docstring<CR>")
+nnoremap("<leader>ct", "<cmd>ChatGPTRun add_tests<CR>")
+nnoremap("<leader>co", "<cmd>ChatGPTRun optimize_code<CR>")
+nnoremap("<leader>cs", "<cmd>ChatGPTRun summarize<CR>")
+nnoremap("<leader>cf", "<cmd>ChatGPTRun fix_bugs<CR>")
+nnoremap("<leader>cx", "<cmd>ChatGPTRun explain_code<CR>")
+nnoremap("<leader>cr", "<cmd>ChatGPTRun code_readability_analysis<CR>")
 

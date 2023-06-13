@@ -97,7 +97,7 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
-  }, -- Find and replace
+  },                          -- Find and replace
   {
     "kylechui/nvim-surround", -- Quickly change surrounding brackets, quotes, tags, whatever
     keys = { "c" },
@@ -352,6 +352,16 @@ return {
     config = function()
       require("plugins.biscuits")
     end,
+  },
+  {
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    config = true,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
   },
 
 
