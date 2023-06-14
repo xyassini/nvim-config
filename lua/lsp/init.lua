@@ -69,6 +69,14 @@ lspconfig.lua_ls.setup({
   settings = require("lsp.servers.lua_ls").settings,
 })
 
+lspconfig.rust_analyzer.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  handlers = handlers,
+  filetypes = { "rust" },
+  settings = require("lsp.servers.rust_analyzer").settings,
+})
+
 for _, server in ipairs({ "bashls", "emmet_ls", "graphql", "html", "prismals", "angularls", "emmet_ls", "dockerls", "svelte" }) do
   lspconfig[server].setup({
     on_attach = on_attach,
